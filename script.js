@@ -1,3 +1,5 @@
+const burger = document.getElementsByClassName("burger");
+const left = burger[0].getBoundingClientRect().left;
 let tld = gsap.timeline();
 tld.fromTo([".hero__title", ".hero__btn"], { visibility: "hidden", opacity: 0, y: "+=60px" },
   { visibility: "visible", opacity: 1, y: "-=60px", duration: 2 })
@@ -9,7 +11,7 @@ tld.fromTo([".hero__descr", ".img1", ".img2", ".img3", ".photos__author"],
 
   let tl = gsap.timeline({delay:3});
 tl.fromTo(".closemove circle", { cx: -20, cy: 200, display: "block" },
-  { cx: 55, cy: 72, duration: 1 })
+  { cx: left+18, cy: 35, duration: 1 })
 
 tl.to(".closemove circle", { r: 22, duration: 0.5 }, 1)
 tl.to(".closemove circle", { r: 35, duration: 0.5 }, 1.5)
